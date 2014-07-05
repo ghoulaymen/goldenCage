@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 5 juil. 2014 01:19:53 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Category" table="category" catalog="goldencage">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" not-null="true" />
+        </property>
+        <property name="idService" type="int">
+            <column name="id_service" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

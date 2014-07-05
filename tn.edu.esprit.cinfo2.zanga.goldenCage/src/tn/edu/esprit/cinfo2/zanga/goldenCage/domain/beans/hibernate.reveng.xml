@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+<type-mapping>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+</type-mapping>
+<table-filter match-schema="goldencage" match-name=".*" />
+	<table catalog="goldencage" name="servise">
+		<column name="id"></column>
+		<column name="name"></column>
+		<column name="id_provider"></column>
+	</table>
+	<table catalog="goldencage" name="user">
+		<column name="id"></column>
+		<column name="firstname"></column>
+		<column name="lastname"></column>
+		<column name="typeof"></column>
+		<column name="passwd"></column>
+	</table>
+	<table catalog="goldencage" name="category">
+		<column name="id"></column>
+		<column name="name"></column>
+		<column name="id_service"></column>
+	</table>
+	<table catalog="goldencage" name="itemtodolist">
+		<column name="id"></column>
+		<column name="id_todolist"></column>
+		<column name="state"></column>
+		<column name="id_category"></column>
+	</table>
+	<table catalog="goldencage" name="cart">
+		<column name="id"></column>
+		<column name="id_user"></column>
+	</table>
+	<table catalog="goldencage" name="todolist">
+		<column name="id"></column>
+		<column name="id_costumer"></column>
+	</table>
+	<table catalog="goldencage" name="comment">
+		<column name="id"></column>
+		<column name="id_User"></column>
+		<column name="date"></column>
+	</table>
+	<table catalog="goldencage" name="cart_item">
+		<column name="id"></column>
+		<column name="id_cart"></column>
+		<column name="id_service"></column>
+	</table>
+</hibernate-reverse-engineering>
