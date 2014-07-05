@@ -1,4 +1,4 @@
-package tn.edu.esprit.cinfo2.zanga.goldenCage.test;
+package tn.edu.esprit.cinfo2.zanga.goldenCage.domain.gui;
 
 import java.awt.EventQueue;
 
