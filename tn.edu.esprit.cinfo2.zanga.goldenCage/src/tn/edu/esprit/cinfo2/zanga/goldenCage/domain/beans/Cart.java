@@ -8,27 +8,28 @@ package tn.edu.esprit.cinfo2.zanga.goldenCage.domain.beans;
 public class Cart {
 
 	private Integer id;
-	private int idUser;
+	private Customer customer;
 
 	public Cart() {
 	}
 
-	public Cart(Integer id, int idUser) {
+	public Cart(Integer id, Customer customer) {
 		this.id = id;
-		this.idUser = idUser;
+		this.customer = customer;
 	}
 
 	@Override
 	public String toString() {
-		return "Cart [id=" + id + ", idUser=" + idUser + "]";
+		return "Cart [id=" + id + ", customer=" + customer + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result
+				+ ((customer == null) ? 0 : customer.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + idUser;
 		return result;
 	}
 
@@ -41,12 +42,15 @@ public class Cart {
 		if (getClass() != obj.getClass())
 			return false;
 		Cart other = (Cart) obj;
+		if (customer == null) {
+			if (other.customer != null)
+				return false;
+		} else if (!customer.equals(other.customer))
+			return false;
 		if (id == null) {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
-			return false;
-		if (idUser != other.idUser)
 			return false;
 		return true;
 	}
@@ -59,12 +63,12 @@ public class Cart {
 		this.id = id;
 	}
 
-	public int getIdUser() {
-		return idUser;
+	public Customer getCustomer() {
+		return customer;
 	}
 
-	public void setIdUser(int idUser) {
-		this.idUser = idUser;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 }

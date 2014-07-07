@@ -5,15 +5,25 @@ import java.util.List;
 import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.beans.Provider;
 import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.dao.IDaoGenerique;
 
-public class ProviderDao implements IDaoGenerique<Provider>{
+public class ProviderDao implements IDaoGenerique<Provider> {
 
-	public ProviderDao() {
+	private static ProviderDao instancesof;
+
+	private ProviderDao() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public static ProviderDao getInstanceof() {
+
+		if (instancesof == null) {
+			instancesof = new ProviderDao();
+		}
+		return instancesof;
 	}
 
 	@Override
 	public boolean add(Provider object) {
-		// TODO Auto-generated method stub
+
 		return false;
 	}
 
@@ -40,6 +50,5 @@ public class ProviderDao implements IDaoGenerique<Provider>{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
 
 }

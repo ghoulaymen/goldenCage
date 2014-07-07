@@ -3,32 +3,32 @@ package tn.edu.esprit.cinfo2.zanga.goldenCage.domain.beans;
 public class ItemCart {
 
 	private int id;
-	private int idServices;
-	private int idCart;
+	private Servise servise;
+	private Cart cart;
 
 	public ItemCart() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ItemCart(int id, int idServices, int idCart) {
+	public ItemCart(int id, Servise servise, Cart cart) {
 		this.id = id;
-		this.idServices = idServices;
-		this.idCart = idCart;
+		this.servise = servise;
+		this.cart = cart;
 	}
 
 	@Override
 	public String toString() {
-		return "ItemCart [id=" + id + ", idServices=" + idServices
-				+ ", idCart=" + idCart + "]";
+		return "ItemCart [id=" + id + ", servise=" + servise + ", cart=" + cart
+				+ "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((cart == null) ? 0 : cart.hashCode());
 		result = prime * result + id;
-		result = prime * result + idCart;
-		result = prime * result + idServices;
+		result = prime * result + ((servise == null) ? 0 : servise.hashCode());
 		return result;
 	}
 
@@ -41,11 +41,17 @@ public class ItemCart {
 		if (getClass() != obj.getClass())
 			return false;
 		ItemCart other = (ItemCart) obj;
+		if (cart == null) {
+			if (other.cart != null)
+				return false;
+		} else if (!cart.equals(other.cart))
+			return false;
 		if (id != other.id)
 			return false;
-		if (idCart != other.idCart)
-			return false;
-		if (idServices != other.idServices)
+		if (servise == null) {
+			if (other.servise != null)
+				return false;
+		} else if (!servise.equals(other.servise))
 			return false;
 		return true;
 	}
@@ -58,20 +64,20 @@ public class ItemCart {
 		this.id = id;
 	}
 
-	public int getIdServices() {
-		return idServices;
+	public Servise getServise() {
+		return servise;
 	}
 
-	public void setIdServices(int idServices) {
-		this.idServices = idServices;
+	public void setServise(Servise servise) {
+		this.servise = servise;
 	}
 
-	public int getIdCart() {
-		return idCart;
+	public Cart getCart() {
+		return cart;
 	}
 
-	public void setIdCart(int idCart) {
-		this.idCart = idCart;
+	public void setCart(Cart cart) {
+		this.cart = cart;
 	}
 
 }

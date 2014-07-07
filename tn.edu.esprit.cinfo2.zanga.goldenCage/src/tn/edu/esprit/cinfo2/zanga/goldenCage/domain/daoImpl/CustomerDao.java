@@ -7,8 +7,18 @@ import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.dao.IDaoGenerique;
 
 public class CustomerDao implements IDaoGenerique<Customer> {
 
-	public CustomerDao() {
+	private static CustomerDao instancesof;
+
+	private CustomerDao() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public static CustomerDao getInstanceof() {
+
+		if (instancesof == null) {
+			instancesof = new CustomerDao();
+		}
+		return instancesof;
 	}
 
 	@Override

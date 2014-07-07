@@ -6,6 +6,18 @@ import java.util.Locale.Category;
 import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.dao.IDaoGenerique;
 
 public class CategoryDao implements IDaoGenerique<Category>{
+private static CategoryDao instancesof;
+
+private CategoryDao() {
+	// TODO Auto-generated constructor stub
+}
+public static CategoryDao getInstanceof() {
+
+	if (instancesof == null) {
+		instancesof = new CategoryDao();
+	}
+		return instancesof;
+}
 
 	@Override
 	public boolean add(Category object) {

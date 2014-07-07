@@ -6,6 +6,19 @@ import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.dao.IDaoGenerique;
 import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.gui.Services;
 
 public class ServicesDao implements IDaoGenerique<Services> {
+	private static ServicesDao instancesof;
+
+	private ServicesDao() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static ServicesDao getInstanceof() {
+
+		if (instancesof == null) {
+			instancesof = new ServicesDao();
+		}
+		return instancesof;
+	}
 
 	@Override
 	public boolean add(Services object) {

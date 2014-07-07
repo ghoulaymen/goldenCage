@@ -7,10 +7,19 @@ import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.dao.IDaoGenerique;
 
 public class CartDao implements IDaoGenerique<Cart> {
 
-	public CartDao() {
+	private static CartDao instancesof;
+
+	private CartDao() {
 		// TODO Auto-generated constructor stub
 	}
 
+public static CartDao getInstanceof() {
+
+	if (instancesof == null) {
+		instancesof = new CartDao();
+	}
+		return instancesof;
+}
 	@Override
 	public boolean add(Cart object) {
 		// TODO Auto-generated method stub

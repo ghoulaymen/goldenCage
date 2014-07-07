@@ -7,8 +7,18 @@ import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.dao.IDaoGenerique;
 
 public class AdminDao implements IDaoGenerique<Admin> {
 
-	public AdminDao() {
+	private static AdminDao instancesof;
+
+	private AdminDao() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public static AdminDao getInstanceof() {
+
+		if (instancesof == null) {
+			instancesof = new AdminDao();
+		}
+		return instancesof;
 	}
 
 	@Override

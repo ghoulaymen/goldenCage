@@ -7,6 +7,20 @@ import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.dao.IDaoGenerique;
 
 public class CommentDao implements IDaoGenerique<Comment> {
 
+	private static CommentDao instancesof;
+
+	private CommentDao() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static CommentDao getInstanceof() {
+
+		if (instancesof == null) {
+			instancesof = new CommentDao();
+		}
+		return instancesof;
+	}
+
 	@Override
 	public boolean add(Comment object) {
 		// TODO Auto-generated method stub

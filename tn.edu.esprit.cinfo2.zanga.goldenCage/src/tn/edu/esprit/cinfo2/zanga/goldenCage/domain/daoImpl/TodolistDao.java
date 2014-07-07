@@ -6,6 +6,19 @@ import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.beans.Todolist;
 import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.dao.IDaoGenerique;
 
 public class TodolistDao implements IDaoGenerique<Todolist> {
+	private static TodolistDao instancesof;
+
+	private TodolistDao() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static TodolistDao getInstanceof() {
+
+		if (instancesof == null) {
+			instancesof = new TodolistDao();
+		}
+		return instancesof;
+	}
 
 	@Override
 	public boolean add(Todolist object) {
