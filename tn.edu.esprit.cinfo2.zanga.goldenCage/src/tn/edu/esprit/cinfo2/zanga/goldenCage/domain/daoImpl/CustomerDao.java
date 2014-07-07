@@ -37,23 +37,18 @@ public class CustomerDao implements IDaoGenerique<Customer> {
 					+ "'"
 					+ customer.getLastname()
 					+ "','"
-					+customer.getFirstname()
-+ "','"
+					+ customer.getFirstname()
+					+ "','"
 					+ customer.getEmail()
 					+ "','"
 					+ customer.getPassword()
-					
+
 					+ "','"
 					+ customer.getDate_wedding()
 					+ "','"
 					+ customer.getImage()
-					
-					+ "')";
 
-//					+ 
-//					+ "',"
-//					+ 
-//					+ ")";
+					+ "')";
 
 			statement.executeUpdate(sql);
 			return true;

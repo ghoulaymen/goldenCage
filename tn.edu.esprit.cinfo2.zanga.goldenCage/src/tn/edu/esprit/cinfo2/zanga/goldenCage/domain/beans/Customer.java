@@ -18,25 +18,11 @@ public class Customer extends User {
 		// TODO Auto-generated constructor stub
 	}
 
-	
 	public Customer(Integer id, String firstname, String lastname,
-			String password, String email, String image) {
-		super(id, firstname, lastname, password, email, image);
+			String password, String email, String image, String role) {
+		super(id, firstname, lastname, password, email, image, role);
 		// TODO Auto-generated constructor stub
 	}
-
-
-	public Customer(Integer id, String firstname, String lastname,
-			String password, String email) {
-		super(id, firstname, lastname, password, email);
-		// TODO Auto-generated constructor stub
-	}
-
-
-	public Customer(Date dateWedding) {
-		this.dateWedding = dateWedding;
-	}
-
 
 	@Override
 	public String toString() {

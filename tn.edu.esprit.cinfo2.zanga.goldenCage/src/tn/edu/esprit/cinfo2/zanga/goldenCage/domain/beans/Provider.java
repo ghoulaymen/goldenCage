@@ -16,44 +16,11 @@ public class Provider extends User {
 		// TODO Auto-generated constructor stub
 	}
 
-
-
-	
-
-
 	public Provider(Integer id, String firstname, String lastname,
-			String password, String email, String image) {
-		super(id, firstname, lastname, password, email, image);
+			String password, String email, String image, String role) {
+		super(id, firstname, lastname, password, email, image, role);
 		// TODO Auto-generated constructor stub
 	}
-
-
-
-
-
-
-	public Provider(Integer id, String firstname, String lastname,
-			String password, String email) {
-		super(id, firstname, lastname, password, email);
-		// TODO Auto-generated constructor stub
-	}
-
-
-
-
-
-
-	public Provider(String reason_social, String adresse, String tel, String job) {
-		this.reason_social = reason_social;
-		this.adresse = adresse;
-		this.tel = tel;
-		this.job = job;
-	}
-
-
-
-
-
 
 	@Override
 	public int hashCode() {
@@ -66,11 +33,6 @@ public class Provider extends User {
 		result = prime * result + ((tel == null) ? 0 : tel.hashCode());
 		return result;
 	}
-
-
-
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -104,21 +66,11 @@ public class Provider extends User {
 		return true;
 	}
 
-
-
-
-
-
 	@Override
 	public String toString() {
 		return "Provider [reason_social=" + reason_social + ", adresse="
 				+ adresse + ", tel=" + tel + ", job=" + job + "]";
 	}
-
-
-
-
-
 
 	public String getJob() {
 		return job;
@@ -151,7 +103,5 @@ public class Provider extends User {
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
-
-
 
 }

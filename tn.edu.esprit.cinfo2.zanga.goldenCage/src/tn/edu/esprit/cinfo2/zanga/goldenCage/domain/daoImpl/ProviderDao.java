@@ -27,29 +27,30 @@ public class ProviderDao implements IDaoGenerique<Provider> {
 
 	@Override
 	public boolean add(Provider provider) {
-		provider.setId(null);
 
 		Connection connection = DataBaseConnection.giveMyconnection();
 
 		try {
 			Statement statement = connection.createStatement();
-			String sql = "INSERT INTO `user`(`lastname`, `firstname`, `email`, `password`, `reasonSocial`, `adresse`, `tel`, `image`) VALUES("
+			String sql = "INSERT INTO user( lastname, firstname, email, password,reasonSocial, adresse, tel, image) VALUES("
 					+ "'"
 					+ provider.getLastname()
-					+ "',"
+					+ "','"
 					+ provider.getFirstname()
-					+ "',"
+					+ "','"
 					+ provider.getEmail()
-					+ "',"
+					+ "','"
 					+ provider.getPassword()
-					+ "',"
+					+ "','"
 					+ provider.getReason_social()
-					+ "',"
+					+ "','"
 					+ provider.getAdresse()
-					+ "',"
+					+ "','"
 					+ provider.getTel()
-					+  "'," + provider.getImage() + ")";
+					+ "','"
+					+ provider.getImage()
 
+					+ "')";
 			statement.executeUpdate(sql);
 			return true;
 		} catch (SQLException e) {
@@ -70,25 +71,25 @@ public class ProviderDao implements IDaoGenerique<Provider> {
 
 	@Override
 	public boolean update(Provider object) {
-		// TODO Auto-generated method stub
+
 		return false;
 	}
 
 	@Override
 	public boolean remove(Provider object) {
-		// TODO Auto-generated method stub
+
 		return false;
 	}
 
 	@Override
 	public List<Provider> findAll() {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
 	@Override
 	public Provider findById(Integer id) {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
