@@ -1,6 +1,10 @@
 package tn.edu.esprit.cinfo2.zanga.goldenCage.domain.beans;
-
-public class Itemtodolist implements java.io.Serializable {
+/**
+ * 
+ * @author Aymen
+ *
+ */
+public class Itemtodolist  {
 
 	private Integer id;
 	private int idTodolist;

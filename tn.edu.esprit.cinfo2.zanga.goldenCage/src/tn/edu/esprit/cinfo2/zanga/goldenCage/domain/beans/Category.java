@@ -1,19 +1,23 @@
 package tn.edu.esprit.cinfo2.zanga.goldenCage.domain.beans;
 
-
-public class Category implements java.io.Serializable {
+/**
+ * 
+ * @author Aymen
+ * 
+ */
+public class Category {
 
 	private int id;
 	private String name;
-	private int idService;
+	
 
 	public Category() {
 	}
 
-	public Category(int id, String name, int idService) {
+	public Category(int id, String name) {
 		this.id = id;
 		this.name = name;
-		this.idService = idService;
+		
 	}
 
 	public int getId() {
@@ -32,12 +36,38 @@ public class Category implements java.io.Serializable {
 		this.name = name;
 	}
 
-	public int getIdService() {
-		return this.idService;
+	@Override
+	public String toString() {
+		return "Category [name=" + name + "]";
 	}
 
-	public void setIdService(int idService) {
-		this.idService = idService;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Category other = (Category) obj;
+		if (id != other.id)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
+	}
+
 
 }

@@ -2,7 +2,12 @@ package tn.edu.esprit.cinfo2.zanga.goldenCage.domain.beans;
 
 import java.util.Date;
 
-public class Comment implements java.io.Serializable {
+/**
+ * 
+ * @author Aymen
+ * 
+ */
+public class Comment {
 
 	private Integer id;
 	private int idUser;
