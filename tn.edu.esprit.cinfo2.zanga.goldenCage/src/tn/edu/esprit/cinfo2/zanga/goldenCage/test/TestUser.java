@@ -3,7 +3,7 @@ package tn.edu.esprit.cinfo2.zanga.goldenCage.test;
 import java.sql.Date;
 
 import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.beans.Customer;
-import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.beans.Provider;
+import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.daoImpl.CustomerDao;
 
 public class TestUser {
 
@@ -12,16 +12,17 @@ public class TestUser {
 
 		Customer aymen = new Customer();
 
-		aymen.setId(1);
 		aymen.setLastname("Ghoul");
 		aymen.setFirstname("Aymen");
-		aymen.setEmail("aymen@tanitweb.com");
+		aymen.setEmail("aymen2@tanitweb.com");
+		aymen.setPassword("123456");
 		Date date = new Date(0, 0, 0);
 		aymen.setDate_wedding(date);
 
 		System.out.println(aymen);
-		Provider Troupe = new Provider();
-		System.out.println(Troupe);
+
+		CustomerDao customerDao = CustomerDao.getInstanceof();
+		customerDao.add(aymen);
 
 	}
 

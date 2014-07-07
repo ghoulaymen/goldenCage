@@ -6,12 +6,12 @@ import java.sql.SQLException;
 
 public class DataBaseConnection {
 	private static Connection myConnetion;
-	private static String db_name = "downexclgolden";
-	private static String host = "jdbc:mysql://downexclgolden.mysql.db:3306/";
+	private static String db_name = "goldenCage";
+	private static String host = "jdbc:mysql://localhost:3306/";
 
 	private static String url=host+db_name+"?allowMultiQueries=true";
-	private static String user = "downexclgolden";
-	private static String password = "UE8tE6c2E5b8";
+	private static String user = "root";
+	private static String password = "";
 	
 
 public static Connection giveMyconnection() {

@@ -1,9 +1,13 @@
 package tn.edu.esprit.cinfo2.zanga.goldenCage.domain.daoImpl;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.beans.Customer;
 import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.dao.IDaoGenerique;
+import tn.edu.esprit.cinfo2.zanga.goldenCage.utilities.DataBaseConnection;
 
 public class CustomerDao implements IDaoGenerique<Customer> {
 
@@ -22,8 +26,50 @@ public class CustomerDao implements IDaoGenerique<Customer> {
 	}
 
 	@Override
-	public boolean add(Customer object) {
-		// TODO Auto-generated method stub
+	public boolean add(Customer customer) {
+		customer.setId(0);
+
+		Connection connection = DataBaseConnection.giveMyconnection();
+
+		try {
+			Statement statement = connection.createStatement();
+			String sql = "INSERT INTO user( lastname, firstname, email, password, dateWedding, image) VALUES("
+					+ "'"
+					+ customer.getLastname()
+					+ "','"
+					+customer.getFirstname()
++ "','"
+					+ customer.getEmail()
+					+ "','"
+					+ customer.getPassword()
+					
+					+ "','"
+					+ customer.getDate_wedding()
+					+ "','"
+					+ customer.getImage()
+					
+					+ "')";
+
+//					+ 
+//					+ "',"
+//					+ 
+//					+ ")";
+
+			statement.executeUpdate(sql);
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
 		return false;
 	}
 
