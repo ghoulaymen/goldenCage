@@ -27,13 +27,14 @@ public class CustomerDao implements IDaoGenerique<Customer> {
 
 	@Override
 	public boolean add(Customer customer) {
-		customer.setId(0);
+		customer.setRole("Customer");
+		;
 
 		Connection connection = DataBaseConnection.giveMyconnection();
 
 		try {
 			Statement statement = connection.createStatement();
-			String sql = "INSERT INTO user( lastname, firstname, email, password, dateWedding, image) VALUES("
+			String sql = "INSERT INTO user( lastname, firstname, email, password, dateWedding, image, role) VALUES("
 					+ "'"
 					+ customer.getLastname()
 					+ "','"
@@ -46,9 +47,7 @@ public class CustomerDao implements IDaoGenerique<Customer> {
 					+ "','"
 					+ customer.getDate_wedding()
 					+ "','"
-					+ customer.getImage()
-
-					+ "')";
+					+ customer.getImage() + "','" + customer.getRole() + "')";
 
 			statement.executeUpdate(sql);
 			return true;

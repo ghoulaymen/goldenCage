@@ -29,10 +29,10 @@ public class ProviderDao implements IDaoGenerique<Provider> {
 	public boolean add(Provider provider) {
 
 		Connection connection = DataBaseConnection.giveMyconnection();
-
+		provider.setRole("provider");
 		try {
 			Statement statement = connection.createStatement();
-			String sql = "INSERT INTO user( lastname, firstname, email, password,reasonSocial, adresse, tel, image) VALUES("
+			String sql = "INSERT INTO user( lastname, firstname, email, password,reasonSocial, adresse, tel, image, role) VALUES("
 					+ "'"
 					+ provider.getLastname()
 					+ "','"
@@ -49,6 +49,8 @@ public class ProviderDao implements IDaoGenerique<Provider> {
 					+ provider.getTel()
 					+ "','"
 					+ provider.getImage()
+					+ "','"
+					+ provider.getRole()
 
 					+ "')";
 			statement.executeUpdate(sql);
