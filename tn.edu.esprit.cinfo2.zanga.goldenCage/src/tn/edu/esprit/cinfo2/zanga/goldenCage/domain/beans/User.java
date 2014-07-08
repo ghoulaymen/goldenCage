@@ -1,5 +1,7 @@
 package tn.edu.esprit.cinfo2.zanga.goldenCage.domain.beans;
 
+import tn.edu.esprit.cinfo2.zanga.goldenCage.utilities.Cryptage;
+
 /**
  * 
  * @author Aymen
@@ -18,20 +20,27 @@ abstract class User {
 	public User() {
 	}
 
+	
+
+	public User(Integer id, String firstname, String lastname, String password,
+			String email, String image, String role) {
+		this.id = id;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.password = Cryptage.getEncodedPassword(password);
+		this.email = email;
+		this.image = image;
+		this.role = role;
+	}
+
+
+
 	public String getPassword() {
 		return password;
 	}
 
 	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
+		this.password = Cryptage.getEncodedPassword(password);
 	}
 
 	@Override
@@ -42,12 +51,10 @@ abstract class User {
 		result = prime * result
 				+ ((firstname == null) ? 0 : firstname.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((image == null) ? 0 : image.hashCode());
 		result = prime * result
 				+ ((lastname == null) ? 0 : lastname.hashCode());
 		result = prime * result
 				+ ((password == null) ? 0 : password.hashCode());
-		result = prime * result + ((role == null) ? 0 : role.hashCode());
 		return result;
 	}
 
@@ -75,11 +82,6 @@ abstract class User {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (image == null) {
-			if (other.image != null)
-				return false;
-		} else if (!image.equals(other.image))
-			return false;
 		if (lastname == null) {
 			if (other.lastname != null)
 				return false;
@@ -90,11 +92,6 @@ abstract class User {
 				return false;
 		} else if (!password.equals(other.password))
 			return false;
-		if (role == null) {
-			if (other.role != null)
-				return false;
-		} else if (!role.equals(other.role))
-			return false;
 		return true;
 	}
 
@@ -102,18 +99,16 @@ abstract class User {
 	public String toString() {
 		return "User [id=" + id + ", firstname=" + firstname + ", lastname="
 				+ lastname + ", password=" + password + ", email=" + email
-				+ ", image=" + image + ", role=" + role + "]";
+				+ "]";
 	}
 
 	public User(Integer id, String firstname, String lastname, String password,
-			String email, String image, String role) {
+			String email) {
 		this.id = id;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.password = password;
 		this.email = email;
-		this.image = image;
-		this.role = role;
 	}
 
 	public Integer getId() {
@@ -154,6 +149,14 @@ abstract class User {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 }

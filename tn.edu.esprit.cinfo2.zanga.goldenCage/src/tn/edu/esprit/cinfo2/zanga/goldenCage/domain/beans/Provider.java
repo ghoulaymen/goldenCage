@@ -10,16 +10,18 @@ public class Provider extends User {
 	private String reason_social;
 	private String adresse;
 	private String tel;
-	private String job;
 
 	public Provider() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public Provider(Integer id, String firstname, String lastname,
-			String password, String email, String image, String role) {
+			String password, String email, String image, String role,
+			String reason_social, String adresse, String tel) {
 		super(id, firstname, lastname, password, email, image, role);
-		// TODO Auto-generated constructor stub
+		this.reason_social = reason_social;
+		this.adresse = adresse;
+		this.tel = tel;
 	}
 
 	@Override
@@ -27,7 +29,6 @@ public class Provider extends User {
 		final int prime = 31;
 		int result = super.hashCode();
 		result = prime * result + ((adresse == null) ? 0 : adresse.hashCode());
-		result = prime * result + ((job == null) ? 0 : job.hashCode());
 		result = prime * result
 				+ ((reason_social == null) ? 0 : reason_social.hashCode());
 		result = prime * result + ((tel == null) ? 0 : tel.hashCode());
@@ -48,11 +49,6 @@ public class Provider extends User {
 				return false;
 		} else if (!adresse.equals(other.adresse))
 			return false;
-		if (job == null) {
-			if (other.job != null)
-				return false;
-		} else if (!job.equals(other.job))
-			return false;
 		if (reason_social == null) {
 			if (other.reason_social != null)
 				return false;
@@ -68,16 +64,8 @@ public class Provider extends User {
 
 	@Override
 	public String toString() {
-		return "Provider [reason_social=" + reason_social + ", adresse="
-				+ adresse + ", tel=" + tel + ", job=" + job + "]";
-	}
-
-	public String getJob() {
-		return job;
-	}
-
-	public void setJob(String job) {
-		this.job = job;
+		return "Provider [" + super.toString() + "reason_social=" + reason_social + ", adresse="
+				+ adresse + ", tel=" + tel + "]";
 	}
 
 	public String getReason_social() {
