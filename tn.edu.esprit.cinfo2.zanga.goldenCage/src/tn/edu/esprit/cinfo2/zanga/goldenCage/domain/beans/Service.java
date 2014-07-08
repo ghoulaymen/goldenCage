@@ -5,21 +5,21 @@ package tn.edu.esprit.cinfo2.zanga.goldenCage.domain.beans;
  * @author Aymen
  * 
  */
-public class Servise {
+public class Service {
 
 	private int id;
 	private String name;
 	private String description;
-	private Double price;
+	private double price;
 	private int stock;
 	private String Image;
 	private Provider provider;
 	private Category category;
 
-	public Servise() {
+	public Service() {
 	}
 
-	public Servise(int id, String name, String description, Double price,
+	public Service(int id, String name, String description, Double price,
 			int stock, String image, Provider provider, Category category) {
 		this.id = id;
 		this.name = name;
@@ -50,7 +50,9 @@ public class Servise {
 				+ ((description == null) ? 0 : description.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((price == null) ? 0 : price.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(price);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result
 				+ ((provider == null) ? 0 : provider.hashCode());
 		result = prime * result + stock;
@@ -65,7 +67,7 @@ public class Servise {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Servise other = (Servise) obj;
+		Service other = (Service) obj;
 		if (Image == null) {
 			if (other.Image != null)
 				return false;
@@ -88,10 +90,8 @@ public class Servise {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
-		if (price == null) {
-			if (other.price != null)
-				return false;
-		} else if (!price.equals(other.price))
+		if (Double.doubleToLongBits(price) != Double
+				.doubleToLongBits(other.price))
 			return false;
 		if (provider == null) {
 			if (other.provider != null)
@@ -166,7 +166,5 @@ public class Servise {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-
-	
 
 }

@@ -31,7 +31,6 @@ public class TestUser {
 		troupe.setPassword("123456");
 		troupe.setLastname("Troupe");
 		troupe.setEmail("troupeboudinar@esprit.tn");
-		troupe.setJob("Orchestre");
 		troupe.setAdresse("Tunis");
 		troupe.setReason_social("1542-88715");
 		troupe.setTel("23726584");
@@ -39,7 +38,13 @@ public class TestUser {
 		System.out.println(troupe);
 		ProviderDao providerDao = ProviderDao.getInstanceof();
 
-		providerDao.add(troupe);
+		// providerDao.add(troupe);
+		Provider provider = providerDao.findById(7);
+		System.out.println(provider);
+		provider.setPassword(provider.getPassword());
+		System.out.println(provider.getPassword());
+		providerDao.update(provider);
+		providerDao.remove(provider);
 	}
 
 }

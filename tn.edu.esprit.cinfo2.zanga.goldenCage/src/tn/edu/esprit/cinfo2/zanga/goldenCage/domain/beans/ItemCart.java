@@ -3,22 +3,22 @@ package tn.edu.esprit.cinfo2.zanga.goldenCage.domain.beans;
 public class ItemCart {
 
 	private int id;
-	private Servise servise;
+	private Service service;
 	private Cart cart;
 
 	public ItemCart() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ItemCart(int id, Servise servise, Cart cart) {
+	public ItemCart(int id, Service servise, Cart cart) {
 		this.id = id;
-		this.servise = servise;
+		this.service = servise;
 		this.cart = cart;
 	}
 
 	@Override
 	public String toString() {
-		return "ItemCart [id=" + id + ", servise=" + servise + ", cart=" + cart
+		return "ItemCart [id=" + id + ", servise=" + service + ", cart=" + cart
 				+ "]";
 	}
 
@@ -28,7 +28,7 @@ public class ItemCart {
 		int result = 1;
 		result = prime * result + ((cart == null) ? 0 : cart.hashCode());
 		result = prime * result + id;
-		result = prime * result + ((servise == null) ? 0 : servise.hashCode());
+		result = prime * result + ((service == null) ? 0 : service.hashCode());
 		return result;
 	}
 
@@ -48,10 +48,10 @@ public class ItemCart {
 			return false;
 		if (id != other.id)
 			return false;
-		if (servise == null) {
-			if (other.servise != null)
+		if (service == null) {
+			if (other.service != null)
 				return false;
-		} else if (!servise.equals(other.servise))
+		} else if (!service.equals(other.service))
 			return false;
 		return true;
 	}
@@ -64,12 +64,12 @@ public class ItemCart {
 		this.id = id;
 	}
 
-	public Servise getServise() {
-		return servise;
+	public Service getServise() {
+		return service;
 	}
 
-	public void setServise(Servise servise) {
-		this.servise = servise;
+	public void setServise(Service servise) {
+		this.service = servise;
 	}
 
 	public Cart getCart() {
