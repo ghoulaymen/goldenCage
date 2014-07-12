@@ -54,7 +54,7 @@ public class ItemCartDao implements IDaoGenerique<ItemCart> {
 
 			try {
 				connection.close();
-			} catch (SQLException e) {
+			} catch (SQLException e) { 
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
