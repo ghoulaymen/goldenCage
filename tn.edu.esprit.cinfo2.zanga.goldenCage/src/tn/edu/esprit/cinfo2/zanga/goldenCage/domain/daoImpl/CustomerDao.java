@@ -69,19 +69,19 @@ public class CustomerDao implements IDaoGenerique<Customer> {
 
 	@Override
 	public boolean update(Customer object) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
 	@Override
 	public boolean remove(Customer object) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
 	@Override
 	public List<Customer> findAll() {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 

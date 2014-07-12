@@ -4,6 +4,6 @@ public interface IDaoAuthentifcation<O> {
 
 	O Signup(String login, String password);
 
-	O Signin(O object);
+	
 
 }

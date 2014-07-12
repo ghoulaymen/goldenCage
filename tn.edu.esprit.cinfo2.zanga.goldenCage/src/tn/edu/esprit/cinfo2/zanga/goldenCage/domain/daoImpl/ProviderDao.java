@@ -11,6 +11,7 @@ import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.beans.Provider;
 import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.dao.IDaoAuthentifcation;
 import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.dao.IDaoGenerique;
 import tn.edu.esprit.cinfo2.zanga.goldenCage.utilities.DataBaseConnection;
+
 /**
  */
 public class ProviderDao implements IDaoGenerique<Provider>,
@@ -210,13 +211,38 @@ public class ProviderDao implements IDaoGenerique<Provider>,
 
 	@Override
 	public Provider Signup(String login, String password) {
-		// TODO Auto-generated method stub
+		Connection connection = DataBaseConnection.giveMyconnection();
+
+		try {
+
+			Statement statement = connection.createStatement();
+			String sql = "select * from user where login =" + login
+					+ "password = " + password;
+			ResultSet resultSet = statement.executeQuery(sql);
+			resultSet.first();
+			Provider provider = new Provider(resultSet.getInt("id"),
+					resultSet.getString("firstname"),
+					resultSet.getString("lastname"),
+					resultSet.getString("password"),
+					resultSet.getString("email"), resultSet.getString("image"),
+					resultSet.getString("role"),
+					resultSet.getString("reasonSocial"),
+					resultSet.getString("adresse"), resultSet.getString("tel"));
+
+			return provider;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		return null;
 	}
 
-	@Override
-	public Provider Signin(Provider object) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

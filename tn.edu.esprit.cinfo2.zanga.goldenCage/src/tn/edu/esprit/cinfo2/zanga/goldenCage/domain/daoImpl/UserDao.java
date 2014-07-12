@@ -6,7 +6,7 @@ import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.beans.User;
 import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.dao.IDaoAuthentifcation;
 import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.dao.IDaoGenerique;
 
-public class UserDao implements IDaoGenerique<User>, IDaoAuthentifcation<User> {
+public class UserDao  implements IDaoGenerique<User>, IDaoAuthentifcation<User> {
 
 	private static UserDao instancesof;
 
@@ -24,19 +24,14 @@ public class UserDao implements IDaoGenerique<User>, IDaoAuthentifcation<User> {
 
 	@Override
 	public User Signup(String login, String password) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
-	@Override
-	public User Signin(User object) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public boolean add(User object) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
