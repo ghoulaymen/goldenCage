@@ -7,7 +7,7 @@ import tn.edu.esprit.cinfo2.zanga.goldenCage.utilities.Cryptage;
  * @author Aymen
  * 
  */
-abstract class User {
+public class User {
 
 	private Integer id;
 	private String firstname;
@@ -20,8 +20,6 @@ abstract class User {
 	public User() {
 	}
 
-	
-
 	public User(Integer id, String firstname, String lastname, String password,
 			String email, String image, String role) {
 		this.id = id;
@@ -32,8 +30,6 @@ abstract class User {
 		this.image = image;
 		this.role = role;
 	}
-
-
 
 	public String getPassword() {
 		return password;

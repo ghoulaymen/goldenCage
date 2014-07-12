@@ -10,7 +10,11 @@ import java.util.List;
 import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.beans.Todolist;
 import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.dao.IDaoGenerique;
 import tn.edu.esprit.cinfo2.zanga.goldenCage.utilities.DataBaseConnection;
-
+/**
+ * 
+ * @author Aymen
+ *
+ */
 public class TodolistDao implements IDaoGenerique<Todolist> {
 	private static TodolistDao instancesof;
 
@@ -132,14 +136,12 @@ public class TodolistDao implements IDaoGenerique<Todolist> {
 			}
 			return todolists;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 
 			try {
 				connection.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

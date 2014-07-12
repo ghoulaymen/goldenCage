@@ -11,7 +11,11 @@ import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.beans.Provider;
 import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.dao.IDaoAuthentifcation;
 import tn.edu.esprit.cinfo2.zanga.goldenCage.domain.dao.IDaoGenerique;
 import tn.edu.esprit.cinfo2.zanga.goldenCage.utilities.DataBaseConnection;
-
+/**
+ * 
+ * @author Aymen
+ *
+ */
 public class ProviderDao implements IDaoGenerique<Provider>,
 		IDaoAuthentifcation<Provider> {
 
