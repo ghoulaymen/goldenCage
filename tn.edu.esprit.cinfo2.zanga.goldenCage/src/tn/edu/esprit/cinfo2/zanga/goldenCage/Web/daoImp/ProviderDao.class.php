@@ -138,7 +138,10 @@ class ProviderDao implements DaoGenerique, Authentification {
         try {
 
 
-            $sql = "select * from user where id= " . $id . "and role = 'provider' ";
+            $sql = "SELECT * 
+                    FROM  `user` 
+                    WHERE  `role` =  'provider'
+                    AND  `id` = " . $id ;
 
             $statement = $connection->prepare($sql);
             $statement->execute();

@@ -4,7 +4,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
+//haya nkamlou haw c bn :*
 /**
  * Description of Provider
  *
@@ -19,15 +19,15 @@ class Provider extends User {
     private $adresse;
     private $tel;
 
-    public function __construct($reason_social, $adresse, $tel, $id, $firstname, $lastname, $password, $email, $image, $role) {
-        parent::__construct($id, $firstname, $lastname, $password, $email, $image, $role);
+    public function __construct($id, $firstname, $lastname, $password, $email, $image,$reason_social,$adresse,$tel) {
+        parent::__construct($id, $firstname, $lastname, $password, $email, $image);
         $this->reason_social = $reason_social;
         $this->adresse = $adresse;
         $this->tel = $tel;
     }
 
     public function __toString() {
-        parent::__toString();
+        return parent::__toString();
     }
 
     public function getReason_social() {

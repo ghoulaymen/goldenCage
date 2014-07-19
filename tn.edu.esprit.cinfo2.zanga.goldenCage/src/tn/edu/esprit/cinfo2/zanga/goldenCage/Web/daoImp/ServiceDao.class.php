@@ -16,6 +16,7 @@ require_once (__DIR__ . '/../daoInterface/DaoSpecific.Interface.php');
 require_once (__DIR__ . '/../model/Services.class.php');
 require_once (__DIR__ . '/ProviderDao.class.php');
 require_once (__DIR__ . '/CategoryDao.class.php');
+require_once (__DIR__ . '/../model/Category.class.php');
 
 class ServiceDao implements DaoGenerique,  DaoSpecific {
 
@@ -114,6 +115,7 @@ class ServiceDao implements DaoGenerique,  DaoSpecific {
                 $categoryDao = new CategoryDao();
                 $category = $categoryDao->findById($resultSet['Category_id']);
                 $provider = $providerDao->findById($resultSet['User_id']);
+                
                 $service = new Services($resultSet['id'], $resultSet['name'], $resultSet['description'], $resultSet['price'], $resultSet['stock'], $resultSet['image'], $provider, $category);
                 return $service;
             }
@@ -270,7 +272,7 @@ class ServiceDao implements DaoGenerique,  DaoSpecific {
                 $categoryDao = new CategoryDao();
                 $category = $categoryDao->findById($resultSet['Category_id']);
                 $provider = $providerDao->findById($resultSet['User_id']);
-                $service = new Services($resultSet['id'], $resultSet['name'], $resultSet['description'], $resultSet['price'], $resultSet['stock'], $resultSet['image'], $provider, $category);
+                $service = new Services($resultSet['id'], $resultSet['name'], $resultSet['description'], $resultSet['price'], $resultSet['stock'], $resultSet['image'], $provider, $category,null);
                 $services[] = $service;
             }
             return $services;

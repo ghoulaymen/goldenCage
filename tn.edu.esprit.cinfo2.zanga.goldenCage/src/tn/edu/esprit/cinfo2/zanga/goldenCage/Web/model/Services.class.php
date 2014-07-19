@@ -25,9 +25,9 @@ class Services {
 	private $Image;
 	private $provider;
 	private $category;
-        private $type;
+        private $type= null;
         
-        function __construct($id, $name, $description, $price, $stock, $Image, $provider, $category,$type) {
+        function __construct($id, $name, $description, $price, $stock, $Image, $provider, $category) {
             $this->id = $id;
             $this->name = (String)$name;
             $this->description = (String) $description;
@@ -36,8 +36,13 @@ class Services {
             $this->Image = (String)$Image;
             $this->provider = $provider;
             $this->category = $category;
-            $this->type = $type;
+            
         }
+        
+        public function __toString() {
+            return $this->getName();
+        }
+
         public function getId() {
             return $this->id;
         }
